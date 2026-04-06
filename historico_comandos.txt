@@ -1,0 +1,64 @@
+- cmd: sudo pacman -S yay
+- cmd: sudo pacman -Syu
+- cmd: sudo pacman -S kate
+- cmd: sudo pacman -S wofi
+- cmd: sudo pacman -S waybar
+- cmd: sudo pacman -S mako
+- cmd: sudo pacman -S ttf-nerd-fonts-symbols ttf-jetbrains-mono-nerd
+- cmd: sudo pacman -S wl-clipboard
+- cmd: sudo pacman -S grim slurp
+- cmd: sudo pacman -S libreoffice-fresh-pt-br
+- cmd: yay -S zapzap
+- cmd: yay -S visual-studio-code-bin
+- cmd: yay -S vesktop
+- cmd: yay -S brave-bin
+- cmd: sudo pacman -S networkmanager
+- cmd: sudo pacman -S pipewire pipewire-pulse wireplumber pavucontrol
+- cmd: sudo pacman -S bluez bluez-utils
+- cmd: sudo systemctl enable --now bluetooth
+- cmd: sudo pacman -S polkit-kde-agent
+- cmd: sudo pacman -S nvidia nvidia-utils nvidia-settings
+- cmd: sudo pacman -S brightnessctl
+- cmd: sudo pacman -S blueman bluez bluez-utils
+- cmd: sudo pacman -S networkmanager network-manager-applet
+- cmd: sudo pacman -S nm-connection-editor
+- cmd: sudo systemctl enable --now NetworkManager
+- cmd: sudo pacman -S iwgtk
+- cmd: yay -S iwgtk
+- cmd: sudo pacman -S network-manager-applet
+- cmd: sudo pacman -S swayosd
+- cmd: sudo pacman -S procps-ng gawk coreutils
+- cmd: xdg-settings set default-web-browser brave-browser.desktop
+- cmd: sudo pacman -S hyprlock
+- cmd: sudo pacman -S gthumb
+- cmd: sudo pacman -S mpv
+- cmd: yay -S satty
+- cmd: sudo pacman -S cliphist wl-clipboard
+- cmd: sudo pacman -S net-tools
+- cmd: sudo pacman -S hyprpaper waypaper
+- cmd: sudo pacman -S swww
+- cmd: sudo pacman -S thunar
+- cmd: sudo pacman -Rns dolphin
+- cmd: sudo pacman -S iwd
+- cmd: sudo systemctl enable --now iwd.service
+- cmd: sudo pacman -S pavucontrol
+- cmd: sudo pacman -S hyprsunset
+- cmd: sudo pacman -R hyprsunset
+- cmd: sudo pacman -S ddcutil
+- cmd: pacman -S wev
+- cmd: sudo pacman -S wev
+- cmd: sudo ddcutil detect
+- cmd: sudo pacman -S wl-gammarelay-rs
+- cmd: yay -S wl-gammarelay-rs
+- cmd: yay -Rns wl-gammarelay-rs
+- cmd: yay -S burpsuite
+- cmd: sudo pacman -S hypridle
+- cmd: brave --enable-features=UseOzonePlatform --ozone-platform=wayland
+- cmd: sudo systemctl enable ufw --now\nsudo ufw default deny incoming\nsudo ufw default allow outgoing\nsudo ufw enable
+- cmd: sudo ufw allow ssh
+- cmd: sudo pacman -S clamav\nsudo freshclam\nsudo systemctl enable clamav-daemon --now
+- cmd: sudo pacman -S rkhunter\nsudo rkhunter --update\nsudo rkhunter --check
+- cmd: sudo pacman -S lyni
+- cmd: sudo pacman -S lynis
+- cmd: sudo pacman -S fail2ban
+- cmd: sudo pacman -S apparmor\nsudo systemctl enable apparmor --now
