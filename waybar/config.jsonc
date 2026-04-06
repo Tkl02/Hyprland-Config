@@ -1,0 +1,169 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    //"tray",
+    "battery",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "backlight",
+    "custom/memory",
+    "temperature",
+    "cpu"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "󰨞",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "default": ""
+    }
+  },
+  "wlr/taskbar": {
+    "all-outputs": true,
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip": true,
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "active-first": false,
+    "sort-by-app-id": false
+  },
+  "network": {
+    "format-wifi": "<span color='#00FFFF'>󰤨</span>   {signalStrength}% ",
+    "format-ethernet": "<span color='#00FFFF'>󰈀</span>   Wired ",
+    "format-linked": "<span color='#FF00FF'>󱘖</span>   {ifname} ",
+    "format-disconnected": "<span color='#FF00FF'>󰤭</span>   Offline ",
+    "tooltip-format": "{ifname} - {essid}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}",
+    "on-click": "iwgtk" //"sh -c \" notify-send 'Network' 'execute nmtui' \""
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span color='#00FFFF'>{icon}</span> {capacity}% ",
+    "format-charging": "<span color='#FF00FF'>󱐋</span> {capacity}% ",
+    "interval": 2,
+    "format-icons": [
+      "󰂎",
+      "󰁼",
+      "󰁿",
+      "󰂁",
+      "󰁹"
+    ],
+    "tooltip": true
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}% ",
+    "format-muted": "<span color='#FF00FF'>󰖁</span> 0% ",
+    "format-icons": {
+      "headphone": "<span color='#FF00FF'></span>",
+      "hands-free": "<span color='#FF00FF'></span>",
+      "headset": "<span color='#FF00FF'></span>",
+      "phone": "<span color='#00FFFF'></span>",
+      "portable": "<span color='#00FFFF'></span>",
+      "car": "<span color='#00FFFF'></span>",
+      "default": [
+        "<span color='#00FFFF'></span>",
+        "<span color='#00FFFF'></span>",
+        "<span color='#00FFFF'></span>"
+      ]
+    },
+    "on-click-right": "pactl -- set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "sh -c \"pavucontrol -t 3\"",
+    "tooltip-format": "Current system sound: {volume}%"
+  },
+  "temperature": {
+    "exec": "sensors | awk '/^Package id 0:/ {print int($4)}'",
+    "format": "<span color='#00FFFF'>  </span>{}°C ",
+    "interval": 5,
+    "tooltip": true,
+    "tooltip-format": "Current CPU temperature: {}°C"
+  },
+  "custom/memory": {
+    "exec": "/home/predroa/.config/waybar/scripts/memory_status.sh",
+    "return-type": "json",
+    "format": "<span color='#00FFFF'></span>   {} ",
+    "interval": 2,
+    "tooltip": true
+  },
+  "cpu": {
+    "format": "<span color='#00FFFF'>  </span>{usage}% ",
+    "tooltip": true
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M - %d/%m/%y}",
+    "on-click": "sh -c 'gsimplecal'",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#00FFFF'><b>{}</b></span>",
+        "weekdays": "<span color='#FF00FF'><b>{}</b></span>",
+        "today": "<span color='#FF00FF'><b>{}</b></span>"
+      }
+    },
+    "tooltip": true,
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
+  },
+  //"tray": {
+  //"icon-size": 16,
+  //  "spacing": 8,
+  //  "show-passive-items": true
+  //},
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "<span color='#00FFFF'>{icon}</span> {percent}% ",
+    "tooltip": true,
+    "tooltip-format": "Current screen brightness: {percent}%",
+    "format-icons": [
+      "<span color='#00FFFF'>󰃞</span>",
+      "<span color='#00FFFF'>󰃝</span>",
+      "<span color='#00FFFF'>󰃟</span>",
+      "<span color='#00FFFF'>󰃠</span>"
+    ]
+  },
+  "bluetooth": {
+    "format": "<span color='#00FFFF'></span> {status} ",
+    "format-connected": "<span color='#00FFFF'></span> {device_alias} ",
+    "format-connected-battery": "<span color='#00FFFF'></span> {device_alias} {device_battery_percentage}% ",
+    "on-click": "blueman-manager",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  }
+}

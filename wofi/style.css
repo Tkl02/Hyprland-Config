@@ -1,0 +1,117 @@
+/* =========================
+ *  BASE WINDOW
+ = *======================== */
+window {
+    background-color: rgba(10, 10, 15, 0.85);
+    border-radius: 14px;
+    padding: 18px;
+
+    /* Glow neon externo */
+    box-shadow:
+    0 0 10px rgba(0, 255, 255, 0.4),
+    0 0 25px rgba(255, 0, 255, 0.2),
+    0 10px 40px rgba(0, 0, 0, 0.8);
+
+    backdrop-filter: blur(14px);
+}
+
+/* =========================
+ *  INPUT (SEARCH BAR)
+ = *======================== */
+#input {
+border-radius: 999px;
+padding: 12px 14px 12px 42px;
+
+background-color: rgba(20, 20, 30, 0.9);
+color: #00ffff;
+
+border: 2px solid rgba(255, 0, 255, 0.6);
+
+/* Neon glow */
+box-shadow:
+0 0 6px rgba(255, 0, 255, 0.6),
+inset 0 0 6px rgba(0, 255, 255, 0.3);
+
+/* Lupa */
+background-image: url("search");
+background-repeat: no-repeat;
+background-position: 14px center;
+}
+
+/* Focus effect */
+#input:focus {
+border: 2px solid #00ffff;
+
+box-shadow:
+0 0 12px rgba(0, 255, 255, 0.8),
+inset 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+/* =========================
+ *  RESULT LIST
+ = *======================== */
+#outer-box {
+margin-top: 16px;
+}
+
+/* =========================
+ *  ENTRY ITEMS
+ = *======================== */
+#entry {
+padding: 10px;
+margin: 6px 0;
+
+border-radius: 10px;
+
+background-color: rgba(255, 255, 255, 0.00);
+color: #e0e0e0;
+
+transition: all 0.15s ease;
+}
+
+/* Hover */
+#entry:hover {
+background-color: rgba(0, 255, 255, 0.08);
+
+box-shadow:
+0 0 6px rgba(0, 255, 255, 0.5);
+}
+
+/* Selected */
+#entry:selected {
+background-color: rgba(255, 0, 255, 0.15);
+
+color: #ffffff;
+
+box-shadow:
+0 0 10px rgba(255, 0, 255, 0.8),
+inset 0 0 8px rgba(0, 255, 255, 0.3);
+
+border: 1px solid rgba(255, 0, 255, 0.6);
+}
+
+/* =========================
+ *  TEXT
+ = *======================== */
+#text {
+color: #d0d0ff;
+}
+
+/* =========================
+ *  ICONS
+ = *======================== */
+#img {
+margin-right: 10px;
+}
+
+/* =========================
+ *  SCROLLBAR (opcional)
+ = *======================== */
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+}
