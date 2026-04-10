@@ -32,26 +32,6 @@
         {
           "name": "I",
           "layout": "BSP"
-        },
-        {
-          "name": "III",
-          "layout": "BSP"
-        },
-        {
-          "name": "IV",
-          "layout": "BSP"
-        },
-        {
-          "name": "V",
-          "layout": "BSP"
-        },
-        {
-          "name": "VI",
-          "layout": "BSP"
-        },
-        {
-          "name": "VII",
-          "layout": "BSP"
         }
       ]
     },
