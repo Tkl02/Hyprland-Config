@@ -1,0 +1,58 @@
+.shell powershell
+
+# Reload whkd configuration
+# alt + o                      : taskkill /f /im whkd.exe && start /b whkd # if shell is cmd
+alt + win + o                 : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden # if shell is pwsh / powershell
+alt + win + shift + o         : komorebic reload-configuration
+
+alt + win + i                 : komorebic toggle-shortcuts
+
+# App shortcuts - these require shell to be pwsh / powershell
+# The apps will be focused if open, or launched if not open
+
+alt + win + q                 : komorebic close
+alt + win + m                 : komorebic minimize
+
+# Abrir PowerShell
+alt + win + return : start powershell
+
+# Focus windows
+alt + win + left              : komorebic focus left
+alt + win + down              : komorebic focus down
+alt + win + up                : komorebic focus up
+alt + win + right             : komorebic focus right
+
+# Move windows
+alt + win + shift + left      : komorebic move left
+alt + win + shift + down      : komorebic move down
+alt + win + shift + up        : komorebic move up
+alt + win + shift + right     : komorebic move right
+alt + win + shift + return    : komorebic promote
+
+# Manipulate windows
+alt + win + f                 : komorebic toggle-float
+alt + win + shift + f         : komorebic toggle-monocle
+
+# Window manager options
+alt + win + shift + r         : komorebic retile
+alt + win + p                 : komorebic toggle-pause
+
+# Workspaces
+alt + win + 1                 : komorebic focus-workspace 0
+alt + win + 2                 : komorebic focus-workspace 1
+alt + win + 3                 : komorebic focus-workspace 2
+alt + win + 4                 : komorebic focus-workspace 3
+alt + win + 5                 : komorebic focus-workspace 4
+alt + win + 6                 : komorebic focus-workspace 5
+alt + win + 7                 : komorebic focus-workspace 6
+alt + win + 8                 : komorebic focus-workspace 7
+
+# Move windows across workspaces
+alt + win + shift + 1         : komorebic move-to-workspace 0
+alt + win + shift + 2         : komorebic move-to-workspace 1
+alt + win + shift + 3         : komorebic move-to-workspace 2
+alt + win + shift + 4         : komorebic move-to-workspace 3
+alt + win + shift + 5         : komorebic move-to-workspace 4
+alt + win + shift + 6         : komorebic move-to-workspace 5
+alt + win + shift + 7         : komorebic move-to-workspace 6
+alt + win + shift + 8         : komorebic move-to-workspace 7
