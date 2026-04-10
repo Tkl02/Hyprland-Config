@@ -2,3 +2,4 @@ komerebi
 altsnap
 yasb
 nerd font jetbrains
+masir
